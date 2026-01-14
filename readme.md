@@ -14,6 +14,8 @@ Then clone your fork locally:
 git clone <your-forked-repo-url>
 cd <project-directory>
 ```
+
+---
 ## 2. Create a file named Dockerfile in the root of the project with the following content:
 
 FROM python:3.10-slim
@@ -30,13 +32,14 @@ RUN pip install --upgrade pip setuptools wheel
 RUN pip install -r requirements.txt
 
 CMD ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+---
 
 ## 3. From the project root directory, run:
 
 ```
 docker build -t call-auditor .
 ```
-
+---
 ## 4. Start the application with the following command:
 
 ```
@@ -46,8 +49,9 @@ docker run --rm -it \
   --name call-auditor-container \
   call-auditor:latest
 ```
-
+---
 ## 5. Once the container is running, open your browser and go to:
 
 http://localhost:8501
 
+---
